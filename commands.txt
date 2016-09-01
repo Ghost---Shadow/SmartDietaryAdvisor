@@ -27,8 +27,8 @@ n.output = toInt(row.output),
 
 MATCH (r:Recipe),(i:Ingredient),(h:Has)
 WHERE (i.id = h.input_ingredient and r.id = h.output)
-CREATE (r)-[:DEPENDS]->(i);
+CREATE (r)-[:DEPENDS{operation:h.operation,quantity:h.quantity,unit:h.unit,procedure:h.procedure}]->(i);
 
 MATCH (r1:Recipe),(r2:Recipe),(h:Has)
 WHERE (r1.id = h.input_recipe and r2.id = h.output)
-CREATE (r2)-[:DEPENDS]->(r1);
+CREATE (r2)-[:DEPENDS{operation:h.operation,quantity:h.quantity,unit:h.unit,procedure:h.procedure}]->(r1);
