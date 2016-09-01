@@ -1,0 +1,34 @@
+LOAD CSV WITH HEADERS FROM "http://localhost/Ingredients.csv" AS row
+CREATE (n:Ingredient)
+SET n = row,
+  n.id = toInt(row.id),
+  n.name = row.name,
+n.calorie = toInt(row.calorie),
+  n.vegetarian = (case row.vegetarian when TRUE then true else false end);
+
+LOAD CSV WITH HEADERS FROM "http://localhost/Recipes.csv" AS row
+CREATE (n:Recipe)
+SET n = row,
+  n.id = toInt(row.id),
+  n.name = row.name,
+  n.anonymous = (case row.anonymous when TRUE then true else false end);
+
+LOAD CSV WITH HEADERS FROM "http://localhost/Has.csv" AS row
+CREATE (n:Has)
+SET n = row,
+  n.id = toInt(row.id),
+  n.operation = row.operation,
+n.input_ingredient = toInt(row.input_ingredient),
+n.input_recipe = toInt(row.input_recipe),
+n.quantity = toInt(row.quantity),
+n.unit = row.unit,
+n.output = toInt(row.output),
+  n.procedure = row.procedure;
+
+MATCH (r:Recipe),(i:Ingredient),(h:Has)
+WHERE (i.id = h.input_ingredient and r.id = h.output)
+CREATE (r)-[:DEPENDS]->(i);
+
+MATCH (r1:Recipe),(r2:Recipe),(h:Has)
+WHERE (r1.id = h.input_recipe and r2.id = h.output)
+CREATE (r2)-[:DEPENDS]->(r1);
