@@ -32,3 +32,5 @@ CREATE (r)-[:DEPENDS{operation:h.operation,quantity:h.quantity,unit:h.unit,proce
 MATCH (r1:Recipe),(r2:Recipe),(h:Has)
 WHERE (r1.id = h.input_recipe and r2.id = h.output)
 CREATE (r2)-[:DEPENDS{operation:h.operation,quantity:h.quantity,unit:h.unit,procedure:h.procedure}]->(r1);
+
+match (h:Has) delete h;

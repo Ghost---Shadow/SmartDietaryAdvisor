@@ -1,1 +1,1 @@
-(operation) ((quantity) (unit) of) (input) (procedure) (to make (output))
+(operation) ((quantity) (unit) of) (input_ingredient) (to (input_recipe)) (procedure) (to make (output))

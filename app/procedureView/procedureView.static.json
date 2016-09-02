@@ -1,7 +1,83 @@
-[
-    {"text":"Step 1","calories":10},
-    {"text":"Step 2","calories":20},
-    {"text":"Step 3","calories":30},
-    {"text":"Step 4","calories":40},
-    {"text":"Step 5","calories":50}
-]
+{
+    "ingredients":[
+        {"name":"egg","calorie":155,"vegetarian":false},
+        {"name":"salt","calorie":0,"vegetarian":true},
+        {"name":"pepper","calorie":0,"vegetarian":true},
+        {"name":"cheese","calorie":402,"vegetarian":true},
+        {"name":"butter","calorie":717,"vegetarian":true},
+        {"name":"parsley","calorie":36,"vegetarian":true}
+    ],
+    "recipes":[
+        {"name":"melted butter and whisked eggs","anonymous":true},
+        {"name":"melted butter","anonymous":false},
+        {"name":"whisked eggs","anonymous":false},
+        {"name":"omlette","anonymous":false},
+        {"name":"omlette with cheese","anonymous":true},
+        {"name":"melted butter and whisked eggs and salt","anonymous":true}
+    ],
+    "has":[
+        {
+            "operation":"Take",
+            "input_ingredient":0,
+            "input_recipe":null,
+            "quantity":2,
+            "unit":null,
+            "output":2,
+            "procedure":"and whisk them"
+        },
+        {
+            "operation":"Add",
+            "input_ingredient":1,
+            "input_recipe":0,
+            "quantity":null,
+            "unit":null,
+            "output":5,
+            "procedure":null
+        },
+        {
+            "operation":"Take",
+            "input_ingredient":4,
+            "input_recipe":null,
+            "quantity":1,
+            "unit":"tsp",
+            "output":1,
+            "procedure":"and warm them"
+        },
+        {
+            "operation":"Add",
+            "input_ingredient":null,
+            "input_recipe":2,
+            "quantity":null,
+            "unit":"all",
+            "output":0,
+            "procedure":null
+        },
+        {
+            "operation":"Add",
+            "input_ingredient":null,
+            "input_recipe":1,
+            "quantity":null,
+            "unit":"all",
+            "output":0,
+            "procedure":null
+        },
+        {
+            "operation":"Cook",
+            "input_ingredient":null,
+            "input_recipe":5,
+            "quantity":null,
+            "unit":null,
+            "output":3,
+            "procedure":"for two mins"
+        },
+        {
+            "operation":"Add",
+            "input_ingredient":3,
+            "input_recipe":3,
+            "quantity":null,
+            "unit":null,
+            "output":4,
+            "procedure":null
+        }
+    ]
+}
