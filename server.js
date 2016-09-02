@@ -8,7 +8,7 @@ app.listen(80, function () {
 
 // Host the public folder app
 app.use(express.static('app'));
-
+/*
 var neo4j = require('neo4j-driver').v1;
 
 var driver = neo4j.driver("bolt://localhost", neo4j.auth.basic("neo4j", "foodstuff"));
@@ -23,4 +23,4 @@ session
     console.log( result.records[0].get("title") + " " + result.records[0].get("name") );
     session.close();
     driver.close();
-  });
+  });*/
