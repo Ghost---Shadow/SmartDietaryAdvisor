@@ -1,83 +1,29 @@
 {
     "ingredients":[
-        {"name":"egg","calorie":155,"vegetarian":false},
-        {"name":"salt","calorie":0,"vegetarian":true},
-        {"name":"pepper","calorie":0,"vegetarian":true},
-        {"name":"cheese","calorie":402,"vegetarian":true},
-        {"name":"butter","calorie":717,"vegetarian":true},
-        {"name":"parsley","calorie":36,"vegetarian":true}
+        {"name":"salt","class":"essential","calorie":0},
+        {"name":"pepper","class":"essential","calorie":0},
+        {"name":"egg","class":"egg","calorie":155},
+        {"name":"cheese","class":"fat","calorie":402},
+        {"name":"butter","class":"fat","calorie":717},
+        {"name":"parsley","class":"vegetable","calorie":36},
+        {"name":"carrot","class":"vegetable","calorie":41},
+        {"name":"potato","class":"vegetable","calorie":77},
+        {"name":"tomato","class":"vegetable","calorie":18},
+        {"name":"chicken meat","class":"meat","calorie":239},
+        {"name":"duck meat","class":"meat","calorie":404}
     ],
-    "recipes":[
-        {"name":"melted butter and whisked eggs","anonymous":true},
-        {"name":"melted butter","anonymous":false},
-        {"name":"whisked eggs","anonymous":false},
-        {"name":"omlette","anonymous":false},
-        {"name":"omlette with cheese","anonymous":true},
-        {"name":"melted butter and whisked eggs and salt","anonymous":true}
-    ],
-    "has":[
-        {
-            "operation":"Take",
-            "input_ingredient":0,
-            "input_recipe":null,
-            "quantity":2,
-            "unit":null,
-            "output":2,
-            "procedure":"and whisk them"
-        },
-        {
-            "operation":"Add",
-            "input_ingredient":1,
-            "input_recipe":0,
-            "quantity":null,
-            "unit":null,
-            "output":5,
-            "procedure":null
-        },
-        {
-            "operation":"Take",
-            "input_ingredient":4,
-            "input_recipe":null,
-            "quantity":1,
-            "unit":"tsp",
-            "output":1,
-            "procedure":"and warm them"
-        },
-        {
-            "operation":"Add",
-            "input_ingredient":null,
-            "input_recipe":2,
-            "quantity":null,
-            "unit":null,
-            "output":0,
-            "procedure":null
-        },
-        {
-            "operation":"Add",
-            "input_ingredient":null,
-            "input_recipe":1,
-            "quantity":null,
-            "unit":null,
-            "output":0,
-            "procedure":null
-        },
-        {
-            "operation":"Cook",
-            "input_ingredient":null,
-            "input_recipe":5,
-            "quantity":null,
-            "unit":null,
-            "output":3,
-            "procedure":"for two mins"
-        },
-        {
-            "operation":"Add",
-            "input_ingredient":3,
-            "input_recipe":3,
-            "quantity":null,
-            "unit":null,
-            "output":4,
-            "procedure":null
-        }
+    "operations":[
+        {"class":"assembly","prerequisite":null,"begin":"Cook","end":"in a pan","attribute":"the pan of"},
+        {"class":"assembly","prerequisite":null,"begin":"Cook","end":"in a pot","attribute":"the pot of"},
+        {"class":"egg","prerequisite":null,"begin":"Take","end":"and boil","attribute":"boiled"},
+        {"class":"egg","prerequisite":1,"begin":"Take","end":"and shred","attribute":"shreaded"},
+        {"class":"essential","prerequisite":null,"begin":"Add","end":null,"attribute":null},
+        {"class":"essential","prerequisite":null,"begin":"Add","end":null,"attribute":null},
+        {"class":"fat","prerequisite":null,"begin":"Take","end":"and melt","attribute":"melted"},
+        {"class":"fat","prerequisite":null,"begin":"Take","end":"and shred","attribute":"shreaded"},
+        {"class":"vegetable","prerequisite":null,"begin":"Take","end":"and chop","attribute":"chopped"},
+        {"class":"vegetable","prerequisite":7,"begin":"Cook","end":"until ready","attribute":"cooked"},
+        {"class":"meat","prerequisite":null,"begin":"Take","end":"and chop","attribute":"chopped"},
+        {"class":"meat","prerequisite":9,"begin":"Cook","end":"until ready","attribute":"cooked"}
     ]
 }

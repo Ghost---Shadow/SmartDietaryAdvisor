@@ -1,7 +1,7 @@
 [
-    {"name":"Eggs","value":false},
-    {"name":"Vegetables","value":false},
-    {"name":"Fats","value":false},
-    {"name":"Meat","value":false},
-    {"name":"Fish","value":false}
+    {"name":"egg","value":true},
+    {"name":"vegetable","value":true},
+    {"name":"fat","value":true},
+    {"name":"meat","value":true},
+    {"name":"fish","value":true}
 ]

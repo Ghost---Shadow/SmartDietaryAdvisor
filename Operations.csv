@@ -1,7 +1,7 @@
 id,class,prerequisite,begin,end
 0,any,?,Add,?
 1,egg,?,Take,and boil
-2,egg,0,Take,and shred
+2,egg,1,Take,and shred
 3,essential,?,Add,?
 4,essential,?,Add,?
 5,fat,?,Take,and melt

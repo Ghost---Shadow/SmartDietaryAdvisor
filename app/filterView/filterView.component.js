@@ -1,15 +1,11 @@
 'use strict';
 
-app.controller('FilterController', function ($scope, $http,messagePassing) {
-    $scope.sharedData = messagePassing.sharedData;
-    
+app.controller('FilterController', function ($scope, $http,messagePassing) {    
+    $scope.targetCalories = {"value":NaN};
     $http.get('/filterView/filterView.static.json').then(function (response) {
         $scope.filters = response.data;
+        messagePassing.allowedClasses = $scope.filters;
+        messagePassing.targetCalories = $scope.targetCalories;
     });
-
-    $scope.onGoButtonPress = function () {
-        messagePassing.sharedData.push("Go pressed");
-        console.log("Go pressed");
-    }
 });
 

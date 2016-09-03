@@ -3,5 +3,5 @@
 var app = angular.module('SmartDietaryAdvisor', []);
 
 app.service('messagePassing', function () {
-    this.sharedData = [];
+    this.allowedClasses = {};
 });
