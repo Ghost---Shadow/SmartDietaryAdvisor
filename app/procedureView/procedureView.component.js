@@ -1,6 +1,8 @@
 'use strict';
 
-app.controller('ProcedureController', function ($scope, $http) {
+app.controller('ProcedureController', function ($scope, $http, messagePassing) {    
+    $scope.sharedData = messagePassing.sharedData;
+
     $http.get('/procedureView/procedureView.static.json').then(function (response) {
         $scope.ingredients = response.data.ingredients;
         $scope.recipes = response.data.recipes;
