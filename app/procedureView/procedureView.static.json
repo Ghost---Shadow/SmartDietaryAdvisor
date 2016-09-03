@@ -48,7 +48,7 @@
             "input_ingredient":null,
             "input_recipe":2,
             "quantity":null,
-            "unit":"all",
+            "unit":null,
             "output":0,
             "procedure":null
         },
@@ -57,7 +57,7 @@
             "input_ingredient":null,
             "input_recipe":1,
             "quantity":null,
-            "unit":"all",
+            "unit":null,
             "output":0,
             "procedure":null
         },

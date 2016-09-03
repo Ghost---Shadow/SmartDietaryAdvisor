@@ -1,8 +1,0 @@
-id,operation,input_ingredient,input_recipe,quantity,unit,output,procedure
-1,Take,1,?,2,?,3,and whisk them
-2,Add,2,1,?,?,6,?
-3,Take,5,?,1,tsp,2,and warm them
-4,Add,?,3,?,all,1,?
-5,Add,?,2,?,all,1,?
-6,Cook,?,6,?,?,4,for two mins to make
-7,Add,4,4,?,?,5,?
