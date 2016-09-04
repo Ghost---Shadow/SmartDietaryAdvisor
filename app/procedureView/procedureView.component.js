@@ -5,35 +5,41 @@ app.controller('ProcedureController', function ($scope, $http, messagePassing) {
     $http.get('/procedureView/procedureView.static.json').then(function (response) {
         $scope.ingredients = response.data.ingredients;
         $scope.operations = response.data.operations;
+        $scope.adjacencyMatrix = response.data.adjacencyMatrix;
+        $scope.generateText = "Generate";
+        $scope.isGenerating = false;
     });
 
     $scope.generate = function () {
+        $scope.isGenerating = true;
+        $scope.generateText = "Generating";
+
         $scope.allowedClasses = [];
         for (var i = 0; i < messagePassing.allowedClasses.length; i++) {
             if (messagePassing.allowedClasses[i].value) {
                 $scope.allowedClasses.push(messagePassing.allowedClasses[i].name);
             }
         }
-        //console.log($scope.allowedClasses);
         $scope.targetCalories = messagePassing.targetCalories.value;
-        //console.log($scope.targetCalories);
-        $scope.buildProcedure();        
+        $scope.buildProcedure();
+
+        $scope.generateText = "Generate";
+        $scope.isGenerating = false;
     }
 
     $scope.buildProcedure = function () {
         // Select random number of ingredients of filtered classes
         var kitchenTable = $scope.populateKitchenTable();
-        //console.log(kitchenTable);
+
+        // Generate a recipe name using the ingredients chosen
         $scope.recipeName = $scope.generateRecipeName(kitchenTable);
 
-        // Select random operations and make sure the order is valid
+        // Select a random number of operations to be performed on the food
         var actions = $scope.generateActions(kitchenTable);
-        //console.log(actions);
 
         // Build steps for each operations and push in procedure
         $scope.procedure = [];
         for (var i = 0; i < actions.length; i++) {
-            //console.log(actions[i]);
             $scope.procedure.push($scope.buildStep(actions[i]));
         }
     }
@@ -67,21 +73,27 @@ app.controller('ProcedureController', function ($scope, $http, messagePassing) {
 
     $scope.populateKitchenTable = function () {
         var kitchenTable = [];
+        var ingredientsCount = $scope.ingredients.length;
+        var numberOfIngredients = Math.floor(Math.random() * ingredientsCount / 4 + ingredientsCount / 4);
         var chanceOfSelection = 0.5;
 
-        // TODO: Make markovian
-        for (var i = 0; i < $scope.ingredients.length; i++) {
-            var ingredient = $scope.ingredients[i];
-            //console.log($scope.allowedClasses);
-            if ($scope.allowedClasses.indexOf(ingredient.class) == -1) {
-                //console.log(ingredient);
-                continue;
+        var lastIngredient = $scope.ingredients[Math.floor(Math.random() * ingredientsCount)];
+        kitchenTable[0] = lastIngredient;
+
+        for (var i = 1; i < numberOfIngredients; i++) {
+            var weights = $scope.adjacencyMatrix[lastIngredient.id];
+            for (var j = 0; j < weights.length; j++) {
+                var ingredient = $scope.ingredients[j];
+                if(ingredient.class == 'essential') continue;
+                if ($scope.allowedClasses.indexOf(ingredient.class) == -1)
+                    weights[j] = 0;
             }
-            if (Math.random() < chanceOfSelection) {
-                kitchenTable.push(ingredient);
-                chanceOfSelection -= .1;
-            }
+            //console.log(weights);
+            var nextIngredientIndex = $scope.rouletteWheel(weights);
+            var lastIngredient = $scope.ingredients[nextIngredientIndex];
+            kitchenTable.push(lastIngredient);
         }
+        //console.log(kitchenTable);
         return kitchenTable;
     }
 
@@ -92,13 +104,12 @@ app.controller('ProcedureController', function ($scope, $http, messagePassing) {
             actions.push($scope.findValidAction(kitchenTable[i], actions, false));
         }
 
-        //var assemblyActions = $scope.getAssemblyActions();
-
         // Assembly stage
         while (kitchenTable.length != 1) {
             var index1 = Math.floor(Math.random() * kitchenTable.length);
             var item1 = kitchenTable.splice(index1, 1);
             var index2 = Math.floor(Math.random() * kitchenTable.length);
+            //var index2 = $scope.getOtherItem(item1.id, kitchenTable);
             var item2 = kitchenTable.splice(index2, 1);
             var component = [item1, item2];
             kitchenTable.push(component);
@@ -112,7 +123,6 @@ app.controller('ProcedureController', function ($scope, $http, messagePassing) {
         var label = isAssembly ? "assembly" : component.class;
 
         for (var i = 0; i < $scope.operations.length; i++) {
-            //console.log($scope.operations[i].class + ' '+ label);
             if ($scope.operations[i].class == label) {
                 validOperations.push($scope.operations[i]);
             }
@@ -142,7 +152,6 @@ app.controller('ProcedureController', function ($scope, $http, messagePassing) {
         }
 
         step += action.operation.end != null ? action.operation.end + ' ' : ' ';
-        //console.log(step);
         return step;
     }
 
@@ -154,7 +163,20 @@ app.controller('ProcedureController', function ($scope, $http, messagePassing) {
                 list.push(components[i].name);
             }
         }
-        //console.log(list);
         return list;
     }
+
+    $scope.rouletteWheel = function (weights) {
+        var weightSum = 0;
+        for (var i = 0; i < weights.length; i++)
+            weightSum += weights[i];
+
+        var value = weightSum * Math.random();
+        for (var i = 0; i < weights.length; i++) {
+            value -= weights[i];
+            if (value <= 0) return i;
+        }
+        return 0;
+    }
+
 });
