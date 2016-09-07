@@ -7,7 +7,8 @@ app.controller('ProcedureController', function ($scope, $http, messagePassing) {
         $scope.operations = response.data.operations;
         $scope.adjacencyMatrix = response.data.adjacencyMatrix;
         $scope.generateText = "Generate";
-        $scope.isGenerating = false;
+        $scope.isGenerating = false;     
+        $scope.calories = messagePassing.calories;
     });
 
     $scope.generate = function () {
@@ -20,7 +21,8 @@ app.controller('ProcedureController', function ($scope, $http, messagePassing) {
                 $scope.allowedClasses.push(messagePassing.allowedClasses[i].name);
             }
         }
-        $scope.targetCalories = messagePassing.targetCalories.value;
+        $scope.calories.value = 0;        
+        //$scope.targetCalories = messagePassing.targetCalories.value;
         $scope.buildProcedure();
 
         $scope.generateText = "Generate";
@@ -79,6 +81,7 @@ app.controller('ProcedureController', function ($scope, $http, messagePassing) {
 
         var lastIngredient = $scope.ingredients[Math.floor(Math.random() * ingredientsCount)];
         kitchenTable[0] = lastIngredient;
+        $scope.calories.value += lastIngredient.calorie;
 
         for (var i = 1; i < numberOfIngredients; i++) {
             var weights = $scope.adjacencyMatrix[lastIngredient.id];
@@ -88,12 +91,11 @@ app.controller('ProcedureController', function ($scope, $http, messagePassing) {
                 if ($scope.allowedClasses.indexOf(ingredient.class) == -1)
                     weights[j] = 0;
             }
-            //console.log(weights);
             var nextIngredientIndex = $scope.rouletteWheel(weights);
             var lastIngredient = $scope.ingredients[nextIngredientIndex];
             kitchenTable.push(lastIngredient);
+            $scope.calories.value += lastIngredient.calorie;
         }
-        //console.log(kitchenTable);
         return kitchenTable;
     }
 
@@ -131,7 +133,7 @@ app.controller('ProcedureController', function ($scope, $http, messagePassing) {
         // TODO: Make markovian
         var index = Math.floor(Math.random() * validOperations.length);
         var selectedOperation = validOperations[index];
-        var action = { "component": component, "operation": selectedOperation };
+        var action = { "component": component, "operation": selectedOperation,"amount":Math.floor(Math.random()*5+1) };
         return action;
     }
 
@@ -146,9 +148,9 @@ app.controller('ProcedureController', function ($scope, $http, messagePassing) {
             }
             step += 'and ' + components[components.length - 1] + ' ';
         } else {
-            step += Math.floor(Math.random() * 100); // FIX
-            step += ' gram of ';
-            step += action.component.name != null ? action.component.name + ' ' : ' ';
+            step += action.amount + ' ';
+            step += action.component.unit != null ? action.component.unit+' of ':'';
+            step += action.component.name != null ? action.component.name + ' ' : '';
         }
 
         step += action.operation.end != null ? action.operation.end + ' ' : ' ';

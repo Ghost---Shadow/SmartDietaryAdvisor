@@ -3,7 +3,5 @@
     <div class="checkbox" ng-repeat="filter in filters">
         <label><input type="checkbox" ng-model="filter.value">{{filter.name}}</label>
     </div>
-    <div class="form-group">
-        <input type="text" class="form-control" placeholder="Target Calories" ng-model="targetCalories.value">
-    </div>
+    <div>Total calories = {{calories.value}}kcal</div>
 </div>

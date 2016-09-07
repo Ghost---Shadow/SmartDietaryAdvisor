@@ -6,6 +6,7 @@ app.controller('FilterController', function ($scope, $http,messagePassing) {
         $scope.filters = response.data;
         messagePassing.allowedClasses = $scope.filters;
         messagePassing.targetCalories = $scope.targetCalories;
+        $scope.calories = messagePassing.calories;
     });
 });
 

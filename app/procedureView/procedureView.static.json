@@ -1,16 +1,16 @@
 {
     "ingredients":[
-        {"id":0,"name":"salt","class":"essential","calorie":0},
-        {"id":1,"name":"pepper","class":"essential","calorie":0},
-        {"id":2,"name":"egg","class":"egg","calorie":155},
-        {"id":3,"name":"cheese","class":"fat","calorie":402},
-        {"id":4,"name":"butter","class":"fat","calorie":717},
-        {"id":5,"name":"parsley","class":"vegetable","calorie":36},
-        {"id":6,"name":"carrot","class":"vegetable","calorie":41},
-        {"id":7,"name":"potato","class":"vegetable","calorie":77},
-        {"id":8,"name":"tomato","class":"vegetable","calorie":18},
-        {"id":9,"name":"chicken meat","class":"meat","calorie":239},
-        {"id":10,"name":"duck meat","class":"meat","calorie":404}
+        {"id":0,"name":"salt","class":"essential","calorie":0,"unit":"table spoon"},
+        {"id":1,"name":"pepper","class":"essential","calorie":0,"unit":"table spoon"},
+        {"id":2,"name":"egg","class":"egg","calorie":155,"unit":null},
+        {"id":3,"name":"cheese","class":"fat","calorie":402,"unit":"table spoon"},
+        {"id":4,"name":"butter","class":"fat","calorie":717,"unit":"table spoon"},
+        {"id":5,"name":"cabbage","class":"vegetable","calorie":36,"unit":null},
+        {"id":6,"name":"carrot","class":"vegetable","calorie":41,"unit":null},
+        {"id":7,"name":"potato","class":"vegetable","calorie":77,"unit":null},
+        {"id":8,"name":"tomato","class":"vegetable","calorie":18,"unit":null},
+        {"id":9,"name":"chicken meat","class":"meat","calorie":239,"unit":"serving"},
+        {"id":10,"name":"duck meat","class":"meat","calorie":404,"unit":"serving"}
     ],
     "operations":[
         {"class":"assembly","prerequisite":null,"begin":"Cook","end":"in a pan","attribute":"the pan of"},

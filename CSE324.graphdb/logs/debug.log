@@ -2418,3 +2418,17 @@ Storage files: (filename : modification date - size)
 2016-09-04 03:16:42.212+0000 INFO  [o.n.k.i.DiagnosticsManager] --- SERVER STARTED END ---
 2016-09-04 03:17:20.437+0000 WARN  [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 303ms.
 2016-09-04 04:17:20.724+0000 WARN  [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 313ms.
+2016-09-04 04:29:34.238+0000 INFO  [o.n.k.i.f.CommunityFacadeFactory] Shutdown started
+2016-09-04 04:29:34.238+0000 INFO  [o.n.k.i.f.CommunityFacadeFactory] Database is now unavailable
+2016-09-04 04:29:34.269+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by database shutdown [58]:  Starting check pointing...
+2016-09-04 04:29:34.269+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by database shutdown [58]:  Starting store flush...
+2016-09-04 04:29:34.301+0000 INFO  [o.n.k.i.s.c.CountsTracker] About to rotate counts store at transaction 58 to [E:\Books\Projects\CSE324\SmartDietaryAdvisor\CSE324.graphdb\neostore.counts.db.a], from [E:\Books\Projects\CSE324\SmartDietaryAdvisor\CSE324.graphdb\neostore.counts.db.b].
+2016-09-04 04:29:34.316+0000 INFO  [o.n.k.i.s.c.CountsTracker] Successfully rotated counts store at transaction 58 to [E:\Books\Projects\CSE324\SmartDietaryAdvisor\CSE324.graphdb\neostore.counts.db.a], from [E:\Books\Projects\CSE324\SmartDietaryAdvisor\CSE324.graphdb\neostore.counts.db.b].
+2016-09-04 04:29:34.316+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by database shutdown [58]:  Store flush completed
+2016-09-04 04:29:34.316+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by database shutdown [58]:  Starting appending check point entry into the tx log...
+2016-09-04 04:29:34.316+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by database shutdown [58]:  Appending check point entry into the tx log completed
+2016-09-04 04:29:34.316+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by database shutdown [58]:  Check pointing completed
+2016-09-04 04:29:34.316+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Starting log pruning.
+2016-09-04 04:29:34.316+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Log pruning complete.
+2016-09-04 04:29:34.379+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STOPPING diagnostics START ---
+2016-09-04 04:29:34.379+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STOPPING diagnostics END ---
