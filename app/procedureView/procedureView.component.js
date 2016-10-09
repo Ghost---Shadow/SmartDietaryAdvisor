@@ -2,8 +2,19 @@
 
 app.controller('ProcedureController', function ($scope, $http, messagePassing) {
 
-    $http.get('/procedureView/procedureView.static.json').then(function (response) {
-        $scope.ingredients = response.data.ingredients;
+    $http.get('/getRecipe').then(function(response){
+        $scope.ingredients = response.data;
+    });
+
+/*
+    // Plan B, fetch data from python server
+    // CORS is enabled
+    $http.get('http://127.0.0.1:8081').then(function(response){
+        console.log(response);
+        $scope.ingredients = response.data;
+    });
+*/
+    $http.get('/procedureView/procedureView.static.json').then(function (response) {        
         $scope.operations = response.data.operations;
         $scope.adjacencyMatrix = response.data.adjacencyMatrix;
         $scope.generateText = "Generate";
@@ -46,7 +57,6 @@ app.controller('ProcedureController', function ($scope, $http, messagePassing) {
         }
     }
 
-    // TODO: Make markovian
     $scope.generateRecipeName = function (kitchenTable) {
         var prefix = ['Royal', 'Indian', 'Chinese', 'Tandoor'];
         var suffix1 = ['ey', 'ed', ''];
@@ -129,8 +139,6 @@ app.controller('ProcedureController', function ($scope, $http, messagePassing) {
                 validOperations.push($scope.operations[i]);
             }
         }
-
-        // TODO: Make markovian
         var index = Math.floor(Math.random() * validOperations.length);
         var selectedOperation = validOperations[index];
         var action = { "component": component, "operation": selectedOperation,"amount":Math.floor(Math.random()*5+1) };

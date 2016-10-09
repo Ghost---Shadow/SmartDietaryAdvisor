@@ -9,32 +9,29 @@ app.listen(80, function () {
 // Host the public folder app
 app.use(express.static('app'));
 
-/*
 var neo4j = require('neo4j-driver').v1;
 
 app.get('/getRecipe', function (req, res, next) {
+  console.log("Request");
   var driver = neo4j.driver("bolt://localhost", neo4j.auth.basic("neo4j", "foodstuff"));
   var session = driver.session();
-  session.run("START a=node(60) MATCH (a)-[r:DEPENDS*]->(d) RETURN DISTINCT r")
+  var query = "MATCH (n:Ingredient) RETURN n.id as id, n.name as name, n.class as class, n.calorie as calorie,n.unit as unit;"
+  session.run(query)
     .then(function (result) {
-      
+      output = [];
+      console.log("Returned " + result.records.length + " results");
       for (var i = 0; i < result.records.length; i++) {
-console.log("here");
-        console.log(result.records[i].get("procedure"));
+        var tmpObj = {};
+        tmpObj.id = result.records[i].get("id").low;
+        tmpObj.name = result.records[i].get("name");
+        tmpObj.class = result.records[i].get("class");
+        tmpObj.calorie = result.records[i].get("calorie").low;
+        tmpObj.unit = result.records[i].get("unit");
+        output.push(tmpObj);
       }
+      //console.log(output);
+      res.json(output)
       session.close();
       driver.close();
-      res.json(result);
     });
-});*/
-/*
-var Neo4j = require("simple-neo4j");
-
-var neo4j = new Neo4j();
-app.get('/getRecipe', function (req, res, next) {
-  neo4j.addQuery('MATCH (n) RETURN n').then(function (result) {
-    console.log(result);
-    res.json(result);
-  });
 });
-*/
