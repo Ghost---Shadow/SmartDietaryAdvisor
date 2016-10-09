@@ -6,9 +6,12 @@ def getStringNeo4J():
     driver = GraphDatabase.driver("bolt://localhost", auth=basic_auth("neo4j", "foodstuff"))
     session = driver.session()
 
-    query = "MATCH (n:Ingredient) RETURN n.id as id, \
-    n.name as name, n.class as class, n.calorie as calorie,\
-    n.unit as unit;"
+    query = "\
+    MATCH (n) \
+    WHERE rand() < 0.5 \
+    RETURN n.id as id, n.name as name, n.class as class,\
+    n.calorie as calorie,n.unit as unit\
+    LIMIT 10;"
 
     result = session.run(query)
 

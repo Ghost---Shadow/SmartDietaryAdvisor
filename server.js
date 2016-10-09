@@ -15,7 +15,7 @@ app.get('/getRecipe', function (req, res, next) {
   console.log("Request");
   var driver = neo4j.driver("bolt://localhost", neo4j.auth.basic("neo4j", "foodstuff"));
   var session = driver.session();
-  var query = "MATCH (n:Ingredient) RETURN n.id as id, n.name as name, n.class as class, n.calorie as calorie,n.unit as unit;"
+  var query = "MATCH (n) WHERE rand() < 0.5 RETURN n.id as id, n.name as name, n.class as class, n.calorie as calorie,n.unit as unit LIMIT 10;"
   session.run(query)
     .then(function (result) {
       output = [];

@@ -1,24 +1,22 @@
 'use strict';
 
 app.controller('ProcedureController', function ($scope, $http, messagePassing) {
-
-    $http.get('/getRecipe').then(function(response){
+    $http.get('/getRecipe').then(function (response) {
         $scope.ingredients = response.data;
     });
-
-/*
-    // Plan B, fetch data from python server
-    // CORS is enabled
-    $http.get('http://127.0.0.1:8081').then(function(response){
-        console.log(response);
-        $scope.ingredients = response.data;
-    });
-*/
-    $http.get('/procedureView/procedureView.static.json').then(function (response) {        
+    /*
+        // Plan B, fetch data from python server
+        // CORS is enabled
+        $http.get('http://127.0.0.1:8081').then(function(response){
+            console.log(response);
+            $scope.ingredients = response.data;
+        });
+    */
+    $http.get('/procedureView/procedureView.static.json').then(function (response) {
         $scope.operations = response.data.operations;
         $scope.adjacencyMatrix = response.data.adjacencyMatrix;
         $scope.generateText = "Generate";
-        $scope.isGenerating = false;     
+        $scope.isGenerating = false;
         $scope.calories = messagePassing.calories;
     });
 
@@ -32,7 +30,7 @@ app.controller('ProcedureController', function ($scope, $http, messagePassing) {
                 $scope.allowedClasses.push(messagePassing.allowedClasses[i].name);
             }
         }
-        $scope.calories.value = 0;        
+        $scope.calories.value = 0;
         //$scope.targetCalories = messagePassing.targetCalories.value;
         $scope.buildProcedure();
 
@@ -94,10 +92,10 @@ app.controller('ProcedureController', function ($scope, $http, messagePassing) {
         $scope.calories.value += lastIngredient.calorie;
 
         for (var i = 1; i < numberOfIngredients; i++) {
-            var weights = $scope.adjacencyMatrix[lastIngredient.id];
+            var weights = $scope.adjacencyMatrix[lastIngredient.id % $scope.adjacencyMatrix.length];
             for (var j = 0; j < weights.length; j++) {
                 var ingredient = $scope.ingredients[j];
-                if(ingredient.class == 'essential') continue;
+                if (ingredient.class == 'essential') continue;
                 if ($scope.allowedClasses.indexOf(ingredient.class) == -1)
                     weights[j] = 0;
             }
@@ -141,7 +139,7 @@ app.controller('ProcedureController', function ($scope, $http, messagePassing) {
         }
         var index = Math.floor(Math.random() * validOperations.length);
         var selectedOperation = validOperations[index];
-        var action = { "component": component, "operation": selectedOperation,"amount":Math.floor(Math.random()*5+1) };
+        var action = { "component": component, "operation": selectedOperation, "amount": Math.floor(Math.random() * 5 + 1) };
         return action;
     }
 
@@ -157,7 +155,7 @@ app.controller('ProcedureController', function ($scope, $http, messagePassing) {
             step += 'and ' + components[components.length - 1] + ' ';
         } else {
             step += action.amount + ' ';
-            step += action.component.unit != null ? action.component.unit+' of ':'';
+            step += action.component.unit != null ? action.component.unit + ' of ' : '';
             step += action.component.name != null ? action.component.name + ' ' : '';
         }
 

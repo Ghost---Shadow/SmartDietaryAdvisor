@@ -7065,3 +7065,208 @@ java.lang.NullPointerException
 	at org.neo4j.bolt.v1.runtime.internal.concurrent.SessionWorker.execute(SessionWorker.java:116)
 	at org.neo4j.bolt.v1.runtime.internal.concurrent.SessionWorker.run(SessionWorker.java:77)
 	at java.lang.Thread.run(Unknown Source)
+2016-10-09 13:46:30.319+0000 WARN  [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 372ms.
+2016-10-09 14:04:23.034+0000 INFO  [o.n.k.i.a.i.s.OnlineIndexSamplingJob] Sampled index :Ingredient(id) with 0 unique values in sample of avg size 0 taken from index containing 0 entries
+2016-10-09 14:04:24.172+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [66]:  Starting check pointing...
+2016-10-09 14:04:24.173+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [66]:  Starting store flush...
+2016-10-09 14:04:24.420+0000 INFO  [o.n.k.i.s.c.CountsTracker] About to rotate counts store at transaction 66 to [E:\Books\Projects\CSE324\SmartDietaryAdvisor\CSE324.graphdb\neostore.counts.db.b], from [E:\Books\Projects\CSE324\SmartDietaryAdvisor\CSE324.graphdb\neostore.counts.db.a].
+2016-10-09 14:04:24.452+0000 INFO  [o.n.k.i.s.c.CountsTracker] Successfully rotated counts store at transaction 66 to [E:\Books\Projects\CSE324\SmartDietaryAdvisor\CSE324.graphdb\neostore.counts.db.b], from [E:\Books\Projects\CSE324\SmartDietaryAdvisor\CSE324.graphdb\neostore.counts.db.a].
+2016-10-09 14:04:24.473+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [66]:  Store flush completed
+2016-10-09 14:04:24.473+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [66]:  Starting appending check point entry into the tx log...
+2016-10-09 14:04:24.475+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [66]:  Appending check point entry into the tx log completed
+2016-10-09 14:04:24.475+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [66]:  Check pointing completed
+2016-10-09 14:04:24.476+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Starting log pruning.
+2016-10-09 14:04:24.476+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Log pruning complete.
+2016-10-09 14:05:53.089+0000 INFO  [o.n.k.i.a.i.s.OnlineIndexSamplingJob] Sampled index :Ingredient(id) with 27 unique values in sample of avg size 27 taken from index containing 27 entries
+2016-10-09 14:09:24.497+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [68]:  Starting check pointing...
+2016-10-09 14:09:24.497+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [68]:  Starting store flush...
+2016-10-09 14:09:24.632+0000 INFO  [o.n.k.i.s.c.CountsTracker] About to rotate counts store at transaction 68 to [E:\Books\Projects\CSE324\SmartDietaryAdvisor\CSE324.graphdb\neostore.counts.db.a], from [E:\Books\Projects\CSE324\SmartDietaryAdvisor\CSE324.graphdb\neostore.counts.db.b].
+2016-10-09 14:09:24.635+0000 INFO  [o.n.k.i.s.c.CountsTracker] Successfully rotated counts store at transaction 68 to [E:\Books\Projects\CSE324\SmartDietaryAdvisor\CSE324.graphdb\neostore.counts.db.a], from [E:\Books\Projects\CSE324\SmartDietaryAdvisor\CSE324.graphdb\neostore.counts.db.b].
+2016-10-09 14:09:24.646+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [68]:  Store flush completed
+2016-10-09 14:09:24.648+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [68]:  Starting appending check point entry into the tx log...
+2016-10-09 14:09:24.649+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [68]:  Appending check point entry into the tx log completed
+2016-10-09 14:09:24.649+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [68]:  Check pointing completed
+2016-10-09 14:09:24.650+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Starting log pruning.
+2016-10-09 14:09:24.650+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Log pruning complete.
+2016-10-09 14:12:30.269+0000 ERROR [o.n.b.t.SocketTransportHandler] Fatal error occurred when handling a client connection: An existing connection was forcibly closed by the remote host An existing connection was forcibly closed by the remote host
+java.io.IOException: An existing connection was forcibly closed by the remote host
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:311)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:881)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:242)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:119)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at java.lang.Thread.run(Unknown Source)
+2016-10-09 14:12:30.282+0000 ERROR [o.n.b.t.SocketTransportHandler] Fatal error occurred when handling a client connection: An existing connection was forcibly closed by the remote host An existing connection was forcibly closed by the remote host
+java.io.IOException: An existing connection was forcibly closed by the remote host
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:311)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:881)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:242)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:119)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at java.lang.Thread.run(Unknown Source)
+2016-10-09 14:14:00.871+0000 ERROR [o.n.b.v.t.BoltProtocolV1] Failed to write response to driver
+java.lang.NullPointerException
+	at org.neo4j.bolt.v1.transport.ChunkedOutput.ensure(ChunkedOutput.java:156)
+	at org.neo4j.bolt.v1.transport.ChunkedOutput.writeShort(ChunkedOutput.java:90)
+	at org.neo4j.bolt.v1.packstream.PackStream$Packer.packStructHeader(PackStream.java:304)
+	at org.neo4j.bolt.v1.messaging.PackStreamMessageFormatV1$Writer.handleSuccessMessage(PackStreamMessageFormatV1.java:145)
+	at org.neo4j.bolt.v1.messaging.msgprocess.MessageProcessingCallback.completed(MessageProcessingCallback.java:102)
+	at org.neo4j.bolt.v1.messaging.msgprocess.MessageProcessingCallback.completed(MessageProcessingCallback.java:31)
+	at org.neo4j.bolt.v1.runtime.internal.SessionStateMachine.after(SessionStateMachine.java:823)
+	at org.neo4j.bolt.v1.runtime.internal.SessionStateMachine.reset(SessionStateMachine.java:699)
+	at org.neo4j.bolt.v1.runtime.internal.concurrent.SessionWorkerFacade.lambda$reset$6(SessionWorkerFacade.java:87)
+	at org.neo4j.bolt.v1.runtime.internal.concurrent.SessionWorker.execute(SessionWorker.java:116)
+	at org.neo4j.bolt.v1.runtime.internal.concurrent.SessionWorker.run(SessionWorker.java:77)
+	at java.lang.Thread.run(Unknown Source)
+2016-10-09 14:16:22.833+0000 ERROR [o.n.b.v.t.BoltProtocolV1] Failed to write response to driver
+java.lang.NullPointerException
+	at org.neo4j.bolt.v1.transport.ChunkedOutput.ensure(ChunkedOutput.java:156)
+	at org.neo4j.bolt.v1.transport.ChunkedOutput.writeShort(ChunkedOutput.java:90)
+	at org.neo4j.bolt.v1.packstream.PackStream$Packer.packStructHeader(PackStream.java:304)
+	at org.neo4j.bolt.v1.messaging.PackStreamMessageFormatV1$Writer.handleSuccessMessage(PackStreamMessageFormatV1.java:145)
+	at org.neo4j.bolt.v1.messaging.msgprocess.MessageProcessingCallback.completed(MessageProcessingCallback.java:102)
+	at org.neo4j.bolt.v1.messaging.msgprocess.MessageProcessingCallback.completed(MessageProcessingCallback.java:31)
+	at org.neo4j.bolt.v1.runtime.internal.SessionStateMachine.after(SessionStateMachine.java:823)
+	at org.neo4j.bolt.v1.runtime.internal.SessionStateMachine.reset(SessionStateMachine.java:699)
+	at org.neo4j.bolt.v1.runtime.internal.concurrent.SessionWorkerFacade.lambda$reset$6(SessionWorkerFacade.java:87)
+	at org.neo4j.bolt.v1.runtime.internal.concurrent.SessionWorker.execute(SessionWorker.java:116)
+	at org.neo4j.bolt.v1.runtime.internal.concurrent.SessionWorker.run(SessionWorker.java:77)
+	at java.lang.Thread.run(Unknown Source)
+2016-10-09 14:16:26.024+0000 ERROR [o.n.b.v.t.BoltProtocolV1] Failed to write response to driver
+java.lang.NullPointerException
+	at org.neo4j.bolt.v1.transport.ChunkedOutput.ensure(ChunkedOutput.java:156)
+	at org.neo4j.bolt.v1.transport.ChunkedOutput.writeShort(ChunkedOutput.java:90)
+	at org.neo4j.bolt.v1.packstream.PackStream$Packer.packStructHeader(PackStream.java:304)
+	at org.neo4j.bolt.v1.messaging.PackStreamMessageFormatV1$Writer.handleSuccessMessage(PackStreamMessageFormatV1.java:145)
+	at org.neo4j.bolt.v1.messaging.msgprocess.MessageProcessingCallback.completed(MessageProcessingCallback.java:102)
+	at org.neo4j.bolt.v1.messaging.msgprocess.MessageProcessingCallback.completed(MessageProcessingCallback.java:31)
+	at org.neo4j.bolt.v1.runtime.internal.SessionStateMachine.after(SessionStateMachine.java:823)
+	at org.neo4j.bolt.v1.runtime.internal.SessionStateMachine.reset(SessionStateMachine.java:699)
+	at org.neo4j.bolt.v1.runtime.internal.concurrent.SessionWorkerFacade.lambda$reset$6(SessionWorkerFacade.java:87)
+	at org.neo4j.bolt.v1.runtime.internal.concurrent.SessionWorker.execute(SessionWorker.java:116)
+	at org.neo4j.bolt.v1.runtime.internal.concurrent.SessionWorker.run(SessionWorker.java:77)
+	at java.lang.Thread.run(Unknown Source)
+2016-10-09 14:18:59.820+0000 ERROR [o.n.b.v.t.BoltProtocolV1] Failed to write response to driver
+java.lang.NullPointerException
+	at org.neo4j.bolt.v1.transport.ChunkedOutput.ensure(ChunkedOutput.java:156)
+	at org.neo4j.bolt.v1.transport.ChunkedOutput.writeShort(ChunkedOutput.java:90)
+	at org.neo4j.bolt.v1.packstream.PackStream$Packer.packStructHeader(PackStream.java:304)
+	at org.neo4j.bolt.v1.messaging.PackStreamMessageFormatV1$Writer.handleSuccessMessage(PackStreamMessageFormatV1.java:145)
+	at org.neo4j.bolt.v1.messaging.msgprocess.MessageProcessingCallback.completed(MessageProcessingCallback.java:102)
+	at org.neo4j.bolt.v1.messaging.msgprocess.MessageProcessingCallback.completed(MessageProcessingCallback.java:31)
+	at org.neo4j.bolt.v1.runtime.internal.SessionStateMachine.after(SessionStateMachine.java:823)
+	at org.neo4j.bolt.v1.runtime.internal.SessionStateMachine.reset(SessionStateMachine.java:699)
+	at org.neo4j.bolt.v1.runtime.internal.concurrent.SessionWorkerFacade.lambda$reset$6(SessionWorkerFacade.java:87)
+	at org.neo4j.bolt.v1.runtime.internal.concurrent.SessionWorker.execute(SessionWorker.java:116)
+	at org.neo4j.bolt.v1.runtime.internal.concurrent.SessionWorker.run(SessionWorker.java:77)
+	at java.lang.Thread.run(Unknown Source)
+2016-10-09 14:19:00.261+0000 ERROR [o.n.b.v.t.BoltProtocolV1] Failed to write response to driver
+java.lang.NullPointerException
+	at org.neo4j.bolt.v1.transport.ChunkedOutput.ensure(ChunkedOutput.java:156)
+	at org.neo4j.bolt.v1.transport.ChunkedOutput.writeShort(ChunkedOutput.java:90)
+	at org.neo4j.bolt.v1.packstream.PackStream$Packer.packStructHeader(PackStream.java:304)
+	at org.neo4j.bolt.v1.messaging.PackStreamMessageFormatV1$Writer.handleSuccessMessage(PackStreamMessageFormatV1.java:145)
+	at org.neo4j.bolt.v1.messaging.msgprocess.MessageProcessingCallback.completed(MessageProcessingCallback.java:102)
+	at org.neo4j.bolt.v1.messaging.msgprocess.MessageProcessingCallback.completed(MessageProcessingCallback.java:31)
+	at org.neo4j.bolt.v1.runtime.internal.SessionStateMachine.after(SessionStateMachine.java:823)
+	at org.neo4j.bolt.v1.runtime.internal.SessionStateMachine.reset(SessionStateMachine.java:699)
+	at org.neo4j.bolt.v1.runtime.internal.concurrent.SessionWorkerFacade.lambda$reset$6(SessionWorkerFacade.java:87)
+	at org.neo4j.bolt.v1.runtime.internal.concurrent.SessionWorker.execute(SessionWorker.java:116)
+	at org.neo4j.bolt.v1.runtime.internal.concurrent.SessionWorker.run(SessionWorker.java:77)
+	at java.lang.Thread.run(Unknown Source)
+2016-10-09 14:19:01.471+0000 ERROR [o.n.b.v.t.BoltProtocolV1] Failed to write response to driver
+java.lang.NullPointerException
+	at org.neo4j.bolt.v1.transport.ChunkedOutput.ensure(ChunkedOutput.java:156)
+	at org.neo4j.bolt.v1.transport.ChunkedOutput.writeShort(ChunkedOutput.java:90)
+	at org.neo4j.bolt.v1.packstream.PackStream$Packer.packStructHeader(PackStream.java:304)
+	at org.neo4j.bolt.v1.messaging.PackStreamMessageFormatV1$Writer.handleSuccessMessage(PackStreamMessageFormatV1.java:145)
+	at org.neo4j.bolt.v1.messaging.msgprocess.MessageProcessingCallback.completed(MessageProcessingCallback.java:102)
+	at org.neo4j.bolt.v1.messaging.msgprocess.MessageProcessingCallback.completed(MessageProcessingCallback.java:31)
+	at org.neo4j.bolt.v1.runtime.internal.SessionStateMachine.after(SessionStateMachine.java:823)
+	at org.neo4j.bolt.v1.runtime.internal.SessionStateMachine.reset(SessionStateMachine.java:699)
+	at org.neo4j.bolt.v1.runtime.internal.concurrent.SessionWorkerFacade.lambda$reset$6(SessionWorkerFacade.java:87)
+	at org.neo4j.bolt.v1.runtime.internal.concurrent.SessionWorker.execute(SessionWorker.java:116)
+	at org.neo4j.bolt.v1.runtime.internal.concurrent.SessionWorker.run(SessionWorker.java:77)
+	at java.lang.Thread.run(Unknown Source)
+2016-10-09 14:20:04.784+0000 ERROR [o.n.b.v.t.BoltProtocolV1] Failed to write response to driver
+java.lang.NullPointerException
+	at org.neo4j.bolt.v1.transport.ChunkedOutput.ensure(ChunkedOutput.java:156)
+	at org.neo4j.bolt.v1.transport.ChunkedOutput.writeShort(ChunkedOutput.java:90)
+	at org.neo4j.bolt.v1.packstream.PackStream$Packer.packStructHeader(PackStream.java:304)
+	at org.neo4j.bolt.v1.messaging.PackStreamMessageFormatV1$Writer.handleSuccessMessage(PackStreamMessageFormatV1.java:145)
+	at org.neo4j.bolt.v1.messaging.msgprocess.MessageProcessingCallback.completed(MessageProcessingCallback.java:102)
+	at org.neo4j.bolt.v1.messaging.msgprocess.MessageProcessingCallback.completed(MessageProcessingCallback.java:31)
+	at org.neo4j.bolt.v1.runtime.internal.SessionStateMachine.after(SessionStateMachine.java:823)
+	at org.neo4j.bolt.v1.runtime.internal.SessionStateMachine.reset(SessionStateMachine.java:699)
+	at org.neo4j.bolt.v1.runtime.internal.concurrent.SessionWorkerFacade.lambda$reset$6(SessionWorkerFacade.java:87)
+	at org.neo4j.bolt.v1.runtime.internal.concurrent.SessionWorker.execute(SessionWorker.java:116)
+	at org.neo4j.bolt.v1.runtime.internal.concurrent.SessionWorker.run(SessionWorker.java:77)
+	at java.lang.Thread.run(Unknown Source)
+2016-10-09 14:21:55.269+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: EXPLAIN MATCH (n) DETACH DELETE n;
+2016-10-09 14:21:55.273+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n) DETACH DELETE n;
+2016-10-09 14:22:02.986+0000 INFO  [o.n.k.i.a.i.s.OnlineIndexSamplingJob] Sampled index :Ingredient(id) with 0 unique values in sample of avg size 0 taken from index containing 0 entries
+2016-10-09 14:22:04.724+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [69]:  Starting check pointing...
+2016-10-09 14:22:04.724+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [69]:  Starting store flush...
+2016-10-09 14:22:04.885+0000 INFO  [o.n.k.i.s.c.CountsTracker] About to rotate counts store at transaction 69 to [E:\Books\Projects\CSE324\SmartDietaryAdvisor\CSE324.graphdb\neostore.counts.db.b], from [E:\Books\Projects\CSE324\SmartDietaryAdvisor\CSE324.graphdb\neostore.counts.db.a].
+2016-10-09 14:22:04.887+0000 INFO  [o.n.k.i.s.c.CountsTracker] Successfully rotated counts store at transaction 69 to [E:\Books\Projects\CSE324\SmartDietaryAdvisor\CSE324.graphdb\neostore.counts.db.b], from [E:\Books\Projects\CSE324\SmartDietaryAdvisor\CSE324.graphdb\neostore.counts.db.a].
+2016-10-09 14:22:04.895+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [69]:  Store flush completed
+2016-10-09 14:22:04.895+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [69]:  Starting appending check point entry into the tx log...
+2016-10-09 14:22:04.897+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [69]:  Appending check point entry into the tx log completed
+2016-10-09 14:22:04.897+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [69]:  Check pointing completed
+2016-10-09 14:22:04.897+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Starting log pruning.
+2016-10-09 14:22:04.897+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Log pruning complete.
+2016-10-09 14:22:32.986+0000 INFO  [o.n.k.i.a.i.s.OnlineIndexSamplingJob] Sampled index :Ingredient(id) with 27 unique values in sample of avg size 27 taken from index containing 27 entries
+2016-10-09 14:22:36.022+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: EXPLAIN LOAD CSV WITH HEADERS FROM "http://localhost/Combinations.csv" AS row
+MATCH (n1:Ingredient),(n2:Ingredient)
+WHERE (n1.id = toInt(row.id1) and n2.id = toInt(row.id2))
+CREATE (n1)-[:combines{count:toInt(row.count)}]->(n2);
+2016-10-09 14:22:36.034+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: LOAD CSV WITH HEADERS FROM "http://localhost/Combinations.csv" AS row
+MATCH (n1:Ingredient),(n2:Ingredient)
+WHERE (n1.id = toInt(row.id1) and n2.id = toInt(row.id2))
+CREATE (n1)-[:combines{count:toInt(row.count)}]->(n2);
+2016-10-09 14:22:55.442+0000 ERROR [o.n.b.v.t.BoltProtocolV1] Failed to write response to driver
+java.lang.NullPointerException
+	at org.neo4j.bolt.v1.transport.ChunkedOutput.ensure(ChunkedOutput.java:156)
+	at org.neo4j.bolt.v1.transport.ChunkedOutput.writeShort(ChunkedOutput.java:90)
+	at org.neo4j.bolt.v1.packstream.PackStream$Packer.packStructHeader(PackStream.java:304)
+	at org.neo4j.bolt.v1.messaging.PackStreamMessageFormatV1$Writer.handleSuccessMessage(PackStreamMessageFormatV1.java:145)
+	at org.neo4j.bolt.v1.messaging.msgprocess.MessageProcessingCallback.completed(MessageProcessingCallback.java:102)
+	at org.neo4j.bolt.v1.messaging.msgprocess.MessageProcessingCallback.completed(MessageProcessingCallback.java:31)
+	at org.neo4j.bolt.v1.runtime.internal.SessionStateMachine.after(SessionStateMachine.java:823)
+	at org.neo4j.bolt.v1.runtime.internal.SessionStateMachine.reset(SessionStateMachine.java:699)
+	at org.neo4j.bolt.v1.runtime.internal.concurrent.SessionWorkerFacade.lambda$reset$6(SessionWorkerFacade.java:87)
+	at org.neo4j.bolt.v1.runtime.internal.concurrent.SessionWorker.execute(SessionWorker.java:116)
+	at org.neo4j.bolt.v1.runtime.internal.concurrent.SessionWorker.run(SessionWorker.java:77)
+	at java.lang.Thread.run(Unknown Source)
+2016-10-09 14:25:52.648+0000 ERROR [o.n.b.v.t.BoltProtocolV1] Failed to write response to driver
+java.lang.NullPointerException
+	at org.neo4j.bolt.v1.transport.ChunkedOutput.ensure(ChunkedOutput.java:156)
+	at org.neo4j.bolt.v1.transport.ChunkedOutput.writeShort(ChunkedOutput.java:90)
+	at org.neo4j.bolt.v1.packstream.PackStream$Packer.packStructHeader(PackStream.java:304)
+	at org.neo4j.bolt.v1.messaging.PackStreamMessageFormatV1$Writer.handleSuccessMessage(PackStreamMessageFormatV1.java:145)
+	at org.neo4j.bolt.v1.messaging.msgprocess.MessageProcessingCallback.completed(MessageProcessingCallback.java:102)
+	at org.neo4j.bolt.v1.messaging.msgprocess.MessageProcessingCallback.completed(MessageProcessingCallback.java:31)
+	at org.neo4j.bolt.v1.runtime.internal.SessionStateMachine.after(SessionStateMachine.java:823)
+	at org.neo4j.bolt.v1.runtime.internal.SessionStateMachine.reset(SessionStateMachine.java:699)
+	at org.neo4j.bolt.v1.runtime.internal.concurrent.SessionWorkerFacade.lambda$reset$6(SessionWorkerFacade.java:87)
+	at org.neo4j.bolt.v1.runtime.internal.concurrent.SessionWorker.execute(SessionWorker.java:116)
+	at org.neo4j.bolt.v1.runtime.internal.concurrent.SessionWorker.run(SessionWorker.java:77)
+	at java.lang.Thread.run(Unknown Source)
